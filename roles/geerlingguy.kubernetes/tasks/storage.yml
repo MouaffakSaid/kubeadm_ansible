@@ -1,0 +1,11 @@
+---
+- name: apply storage YAML file
+  command: "kubectl apply -f /home/ansmaster/Documents/ansible_kubeadm/kubeadm_playbook/storage.yaml"
+ # loop:
+ #   - curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+  #  - sudo chmod 700 get_helm.sh
+ #   - ./get_helm.sh
+   # - helm repo add nginx-stable https://helm.nginx.com/stable
+   # - helm repo update
+   #  - kubectl apply -f /home/ansmaster/Documents/kubeadm_playbook/storage.yaml
+

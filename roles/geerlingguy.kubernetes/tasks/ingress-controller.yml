@@ -1,0 +1,10 @@
+---
+- name: apply ingress controller YAML file
+  command: "{{ item }}"
+  loop:
+    # - curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+     - chmod 700 /home/ansmaster/Documents/ansible_kubeadm/kubeadm_playbook/get_helm.sh
+     - sh /home/ansmaster/Documents/ansible_kubeadm/kubeadm_playbook/get_helm.sh
+     - /usr/local/bin/helm repo add nginx-stable https://helm.nginx.com/stable
+     - /usr/local/bin/helm repo update
+     - /usr/local/bin/helm install my-release nginx-stable/nginx-ingress

@@ -1,0 +1,8 @@
+---
+- name: apply metallb YAML file
+  command: "kubectl apply -f {{ item }}"
+  loop:
+    - https://raw.githubusercontent.com/mvallim/kubernetes-under-the-hood/master/services/kube-service-load-balancer.yaml
+    - https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/namespace.yaml
+    - /home/ansmaster/Documents/ansible_kubeadm/kubeadm_playbook/metallbv2.yaml
+    - /home/ansmaster/Documents/ansible_kubeadm/kubeadm_playbook/metallb.yaml

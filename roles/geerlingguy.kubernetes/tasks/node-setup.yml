@@ -1,0 +1,20 @@
+---
+- name: pki
+  file:
+    path: /etc/kubernetes/pki/ca.crt
+    state: absent
+
+- name: kubelet 
+  file:
+    path: /etc/kubernetes/kubelet.conf
+    state: absent
+
+- name: Stop kubelet service
+  systemd:
+    name: kubelet
+    state: stopped
+
+
+    #- name: Join node to Kubernetes control plane.  
+    #shell: "{{ kubernetes_join_command_result }}"
+   
